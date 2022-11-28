@@ -24,13 +24,11 @@ function App() {
     const observer = new IntersectionObserver(callbackFunction, {
       root: null,
       rootMargin: '-50%',
-      treshold: 0,
+      treshold: 1.0,
     })
     if (containerRef.current) observer.observe(containerRef.current)
 
-    return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current)
-    }
+    return () => observer.disconnect()
   }, [containerRef])
 
   return (
