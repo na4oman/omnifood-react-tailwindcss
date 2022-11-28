@@ -1,13 +1,67 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply font-medium text-lg text-neutral-700 hover:text-shades transition-all;
+  }
+
+  .cta-button {
+    @apply bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-shades;
+  }
+
+  .customer-img {
+    @apply inline-block h-8 w-8 lg:h-12 lg:w-12 rounded-full ring-2 ring-white;
+  }
+
+  .logo-img {
+    @apply h-2.5 sm:h-4 md:h-6 xl:h-8 contrast-0;
+  }
+
+  .pricing-card {
+    @apply border-2 border-tints rounded-xl p-10 max-w-md shadow-md;
+  }
+
+  .heading-primary {
+    @apply font-bold text-gray-dark tracking-tighter leading-none mb-8 text-3xl sm:text-4xl lg:text-5xl;
+  }
+
+  .heading-secondary {
+    @apply font-bold text-gray-dark tracking-normal leading-8 text-3xl lg:text-4xl mb-10;
+  }
+
+  .heading-tertiary {
+    @apply font-bold text-gray-dark mb-8 text-lg lg:text-xl;
+  }
+
+  .subheading {
+    @apply text-shades text-center uppercase font-semibold text-sm lg:text-base block mb-4 tracking-wide;
+  }
+
+  .mobile-open {
+    @apply translate-x-0 opacity-100 pointer-events-auto visible;
+  }
+
+  .mobile-close {
+    @apply translate-x-full opacity-0 pointer-events-none invisible;
+  }
+
+  .sticky-nav {
+    @apply fixed top-0 bottom-0 w-full h-16 pt-0 pb-0 z-50 shadow-lg bg-white/95;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #555;
+  overflow-x: hidden;
 }
